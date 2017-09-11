@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="group1" class="pojo.Group">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="Group1"/>
+    </bean>
+    <bean id="group2" class="pojo.Group">
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="Group2"/>
+    </bean>
+    <bean id="student1" class="pojo.Student">
+        <constructor-arg name="group" ref="group1"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="80"/>
+    </bean>
+    <bean id="student2" class="pojo.Student">
+        <constructor-arg name="group" ref="group2"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="45"/>
+    </bean>
+    <bean id="student3" class="pojo.Student">
+        <constructor-arg name="group" ref="group1"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="99"/>
+    </bean>
+    <bean id="student4" class="pojo.Student">
+        <constructor-arg name="group" ref="group2"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="42"/>
+    </bean>
+    <bean id="student5" class="pojo.Student">
+        <constructor-arg name="group" ref="group1"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="89"/>
+    </bean>
+    <bean id="student6" class="pojo.Student">
+        <constructor-arg name="group" ref="group2"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="88"/>
+    </bean>
+    <bean id="student7" class="pojo.Student">
+        <constructor-arg name="group" ref="group2"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="41"/>
+    </bean>
+    <bean id="student8" class="pojo.Student">
+        <constructor-arg name="group" ref="group1"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="78"/>
+    </bean>
+    <bean id="student9" class="pojo.Student">
+        <constructor-arg name="group" ref="group1"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="12"/>
+    </bean>
+    <bean id="student10" class="pojo.Student">
+        <constructor-arg name="group" ref="group2"/>
+        <constructor-arg name="name" value="Student1"/>
+        <constructor-arg name="avgRating" value="56"/>
+    </bean>
+
+    <bean name="app" class="App">
+        <property name="students">
+            <list>
+                <ref bean="student1"/>
+                <ref bean="student2"/>
+                <ref bean="student3"/>
+                <ref bean="student4"/>
+                <ref bean="student5"/>
+                <ref bean="student6"/>
+                <ref bean="student7"/>
+                <ref bean="student8"/>
+                <ref bean="student9"/>
+                <ref bean="student10"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
